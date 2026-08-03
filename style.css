@@ -278,3 +278,69 @@ display:none;
 }
 
 }
+
+/* ===================== */
+/* Плавающая кнопка музыки */
+/* ===================== */
+
+.floating-music{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:70px;
+
+height:70px;
+
+border:none;
+
+border-radius:50%;
+
+background:#b58b2b;
+
+color:white;
+
+font-size:28px;
+
+cursor:pointer;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+.floating-music:hover{
+
+transform:scale(1.1);
+
+background:#9d7725;
+
+}
+
+.floating-music.playing{
+
+animation:rotate 4s linear infinite;
+
+}
+
+@keyframes rotate{
+
+from{
+
+transform:rotate(0);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
