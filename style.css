@@ -1,0 +1,280 @@
+/* ===== Общие стили ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Cormorant Garamond',serif;
+    background:#faf8f3;
+    color:#4d4034;
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* Орнаменты */
+
+body::before,
+body::after{
+    content:"❈ ❈ ❈";
+    position:fixed;
+    top:0;
+    height:100%;
+    width:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    writing-mode:vertical-rl;
+    font-size:26px;
+    color:#c9a34a;
+    opacity:.25;
+    pointer-events:none;
+}
+
+body::before{
+    left:5px;
+}
+
+body::after{
+    right:5px;
+}
+
+/* Первый экран */
+
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.75)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero-content{
+    animation:fade 1.5s;
+}
+
+.hero h3{
+    letter-spacing:5px;
+    color:#b58b2b;
+    font-size:20px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin:15px 0;
+    font-weight:600;
+}
+
+.hero span{
+    color:#b58b2b;
+}
+
+.hero p{
+    font-size:26px;
+    margin-bottom:30px;
+}
+
+.hero a{
+    text-decoration:none;
+    background:#b58b2b;
+    color:white;
+    padding:14px 35px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.hero a:hover{
+    background:#9e7722;
+}
+
+/* Секции */
+
+section{
+    width:min(900px,90%);
+    margin:auto;
+    padding:90px 0;
+    text-align:center;
+}
+
+h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.line{
+    width:90px;
+    height:2px;
+    background:#c8a14d;
+    margin:20px auto 40px;
+}
+
+section p{
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+/* Карточки */
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:#b58b2b;
+    margin-bottom:15px;
+}
+
+.map{
+    display:inline-block;
+    margin-top:20px;
+    color:white;
+    background:#b58b2b;
+    padding:10px 25px;
+    border-radius:25px;
+    text-decoration:none;
+}
+
+/* Таймер */
+
+.timer{
+    background:white;
+    border-radius:20px;
+    margin-top:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    padding:70px 20px;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+#countdown div{
+    width:120px;
+}
+
+#countdown span{
+    display:block;
+    font-size:50px;
+    color:#b58b2b;
+}
+
+/* Музыка */
+
+.music button{
+    background:#b58b2b;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* RSVP */
+
+.rsvp form{
+    max-width:600px;
+    margin:auto;
+}
+
+.rsvp input,
+.rsvp select,
+.rsvp textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:18px;
+    font-family:inherit;
+}
+
+.rsvp button{
+    width:100%;
+    border:none;
+    background:#b58b2b;
+    color:white;
+    padding:16px;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    padding:40px;
+    text-align:center;
+    background:#f3eee4;
+}
+
+footer p{
+    font-size:22px;
+}
+
+/* Анимация */
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Телефон */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:22px;
+}
+
+h2{
+font-size:34px;
+}
+
+section p{
+font-size:21px;
+}
+
+body::before,
+body::after{
+display:none;
+}
+
+}
