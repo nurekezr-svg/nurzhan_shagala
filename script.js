@@ -58,33 +58,37 @@ setInterval(updateCountdown, 1000);
 // МУЗЫКА
 // =========================
 
-const audio = document.getElementById("audio");
+const audio=document.getElementById("audio");
 
-const musicButton = document.getElementById("playMusic");
+const btn=document.getElementById("playMusic");
 
-let playing = false;
+let playing=false;
 
-musicButton.addEventListener("click", () => {
+btn.onclick=function(){
 
-    if (!playing) {
+if(!playing){
 
-        audio.play();
+audio.play();
 
-        musicButton.textContent = "❚❚ Әуенді тоқтату";
+playing=true;
 
-        playing = true;
+btn.classList.add("playing");
 
-    } else {
+btn.innerHTML="❚❚";
 
-        audio.pause();
+}else{
 
-        musicButton.textContent = "♫ Әуенді қосу";
+audio.pause();
 
-        playing = false;
+playing=false;
 
-    }
+btn.classList.remove("playing");
 
-});
+btn.innerHTML="♫";
+
+}
+
+}
 
 // =========================
 // ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ
